@@ -44,24 +44,76 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SchemeColorBox(
+                label: 'Primary',
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              SchemeColorBox(
+                label: 'Secondary',
+                color: Theme.of(context).colorScheme.secondary,
+              ),
+              SchemeColorBox(
+                label: 'Tertiary',
+                color: Theme.of(context).colorScheme.tertiary,
+              ),
+            ],
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text(
+                  'You have pushed the button this many times:',
+                ),
+                Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class SchemeColorBox extends StatelessWidget {
+  final String label;
+  final Color color;
+
+  const SchemeColorBox({
+    Key? key,
+    required this.label,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Text(label),
+            Container(
+              color: color,
+              height: 40,
+              width: 40,
+            ),
+          ],
+        ),
       ),
     );
   }
