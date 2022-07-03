@@ -1,4 +1,4 @@
-name: dynamic_color
+name: dynamic_color_example
 description: A new Flutter project.
 
 publish_to: 'none'
@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  dynamic_color: ^1.4.0
 
 dev_dependencies:
   flutter_test:
