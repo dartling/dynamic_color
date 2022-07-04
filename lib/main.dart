@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DynamicColorBuilder(builder: (lightColorScheme, darkColorScheme) {
       return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Dynamic Color',
         theme: ThemeData(
           colorScheme: lightColorScheme ?? _defaultLightColorScheme,
           useMaterial3: true,
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
           colorScheme: darkColorScheme ?? _defaultDarkColorScheme,
           useMaterial3: true,
         ),
-        themeMode: ThemeMode.dark,
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        themeMode: ThemeMode.light,
+        home: const MyHomePage(title: 'Dynamic Color'),
       );
     });
   }
